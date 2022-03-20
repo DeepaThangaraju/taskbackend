@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const connectDB=async(url)=>{
     try{
-        const con=await mongoose.connect(url);
+        const con=await mongoose.connect(url, {useNewUrlParser: true});
         console.log("DB connceted")
     }catch(error){
        console.error(error.message)
