@@ -7,10 +7,9 @@ import cors from "cors"
 
 const app=express();
 dotenv.config()
-connectDB()
+connectDB(process.env.MONGO_URL)
 app.use(express.json())
 app.use(cors())
-app.set("view engine", "ejs");
 const PORT=process.env.PORT || 9000;
 
 
